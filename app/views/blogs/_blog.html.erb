@@ -1,25 +1,31 @@
-    <div class="content_post" style="background-image: url(<%= blog.image %>);">
-
-    		<li><%= link_to '詳細', "/blogs/#{blog.id}", method: :get %>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= blog.image %>">
+          <span class="card-title">
+            <a href="">
+                <span class="white-text">
+                <bold ><%= blog.name %></bold><br>投稿者 : <%= blog.user.nickname %> さん</span></a>
+            </span>
+        </div>
+        <div class="card-content">
+          <p><%= simple_format(blog.text) %></p>
+        </div>
+        <div class="card-action">
+          <li><%= link_to '詳細', "/blogs/#{blog.id}", method: :get, class: "waves-effect waves-light #90caf9 blue lighten-3 btn" %>
             </li>
 
-		<% if user_signed_in? && current_user.id == blog.user_id %>
-			<li><%= link_to '編集', "/blogs/#{blog.id}/edit", method: :get %>
-	        </li>
-			<li><%= link_to '削除', "/blogs/#{blog.id}", method: :delete %>
-	        </li>
+        <% if user_signed_in? && current_user.id == blog.user_id %>
+            <li><%= link_to '編集', "/blogs/#{blog.id}/edit", method: :get ,class: "waves-effect waves-light blue lighten-3 btn" %>
+            </li>
+            <li><%= link_to '削除', "/blogs/#{blog.id}", method: :delete,  class: "waves-effect waves-light blue lighten-3 btn" %>
+            </li>
 
         <% end %>
-
-    	<span class="name">
-         <a href=""><span>投稿者 : <%= blog.user.nickname %> さん</span>
-         </a>
-        </span>
-    </div>	
-
-    <div class="text">
-        <p>
-        <%= simple_format(blog.text) %>
-        </p>
+        </div>
+      </div>
     </div>
-      
+  </div>
+</div>
