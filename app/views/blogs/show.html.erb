@@ -1,0 +1,46 @@
+<div class ="contents row">
+  <div class="content_post" style="background-image: url(<%= @blog.image %>);">
+    <% if user_signed_in? && current_user.id == @blog.user_id %>
+        <li>
+          <%= link_to '編集', "/blogs/#{@blog.id}/edit", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/blogs/#{@blog.id}", method: :delete %>
+        </li>
+    <% end %>
+    
+    <span class="name">
+      <a href="/users/<%= @blog.user.id %>">
+        <span>投稿者</span><%= @blog.user.nickname %>
+      </a>
+    </span>
+  </div>
+    <div class="text">
+    <p>
+    <%= simple_format(@blog.text) %>
+    </p>
+    </div>
+
+     <div class="container"> 
+    <!-- ここからフォーム -->
+    <% if current_user %>
+      <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
+        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
+        <input type="submit" value="SENT">
+      <% end %>
+    <% end %>
+
+    <div class="comments center">   
+      <h5>＜コメント一覧＞</h5>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

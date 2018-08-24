@@ -5,8 +5,41 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <style type="text/css" href="./style.css"></style>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 </head>
 <body>
+
+	<div class="navbar-fixed">
+    <nav class="#0d47a1 blue darken-4">
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo center">BLOG</a>
+	      
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	   	   
+	   	   <% if user_signed_in? %>
+	   	   	<span><li><%= current_user.nickname %>さん</li>
+            <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        	</span>
+      	    <li><a class="post" href="/blogs/new">投稿する</a></li>
+      		<% else %>
+        	<li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+        	<li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+	        <% end %>
+	        
+	      </ul>
+	      
+	     </div>
+     </nav>
+     </div>
 
 <%= yield %>
 

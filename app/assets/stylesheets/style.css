@@ -1,0 +1,36 @@
+.contentsrow {
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.content_post {
+	background-size: cover;
+	height: 500px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.input {
+	margin-top: 100px;
+}
+
+.name {
+	font-size: 30px;
+	bottom: 0px;
+}
+
+.text {
+	background-color: #f0f0f0;
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.comments {
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+}
