@@ -20,10 +20,6 @@
 	float: right;
 }
 
-.posted_by_content {
-	margin-top: 20px;
-}
-
 .contentsrow {
 	height: 100px;
 	width: 70%;
@@ -35,7 +31,38 @@
 	height: 500px;
 	width: 70%;
 	margin: 0 auto;
+	
 }
+
+.card-content{
+    height: 200px;
+    overflow: hidden;
+}
+
+.posted_by_content {
+	margin-top: 20px;
+	text-overflow: ellipsis;  
+	overflow: hidden;
+}
+
+
+.card-image img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.card-action {
+	height: 70px;
+}
+
+.card-action li {
+	text-align: center;
+	list-style: none;
+	float: left;
+	width: 33%;
+}
+
 
 .input {
 	margin-top: 100px;
@@ -54,11 +81,42 @@
 	margin-bottom: 20px;
 }
 
+/*詳細*/
+
+.card-content-show{
+	padding: 24px;
+}
+
+.posted_by_content-show {
+	margin-top: 20px;
+	width: 431px;
+}
+
+.container .input {
+	margin-top: 50px;
+}
+
+
+/*新規、編集系*/
+
+.input {
+	height: 100px;
+	margin: 0 auto;
+	width: 400px;	
+}
+
+.input .btn {
+	margin-top: 50px;
+}
+
+.input p {
+	margin: 50px;
+	font-size: 30px;
+}
 
 
 
-
-
+/*コメント系*/
 
 .comments {
 	height: 100px;
@@ -66,22 +124,7 @@
 	margin: 0 auto;
 }
 
-.card-image img{
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-}
 
-.card-action {
-	height: 70px;
-}
-
-.card-action li {
-	text-align: center;
-	list-style: none;
-	float: left;
-	width: 33%;
-}
 
 
 

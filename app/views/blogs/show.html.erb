@@ -6,13 +6,13 @@
           <img src="<%= @blog.image %>">
           <span class="card-title">
         </div>
-        <div class="card-content">
+        <div class="card-content-show">
           <span class="book_title">
           Title : <%= @blog.name %></span>
           <a href=""><sapn class="posted_by">
           Posted by : <%= @blog.user.nickname %> さん</span>
           </a>
-          <div class="posted_by_content"><%= simple_format(@blog.text) %>
+          <div class="posted_by_content-show"><%= simple_format(@blog.text) %>
           </div>
         </div>
         <div class="card-action">
@@ -37,12 +37,12 @@
  <div class="row">
     <div class="col s12">
       <div class="card #e0f7fa cyan lighten-5">
-        <div class="card-content white-text">
+        <div class="card-content white-text center">
           <span class="card-title blue-text">comments</span>
           <% if current_user %>
       <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
-        <textarea class="blue-text" cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
-        <input class="waves-effect waves-light blue lighten-3 btn center" type="submit" value="SENT">
+        <textarea class="blue-text" cols="30" name="text" placeholder="comments" rows="2"></textarea>
+        <input class="waves-effect waves-light blue lighten-3 btn" type="submit" value="SENT">
       <% end %>
     <% end %>
           
@@ -73,6 +73,8 @@
         <input class="waves-effect waves-light blue lighten-3 btn center" type="submit" value="SENT">
       <% end %>
     <% end %>
+
+
 
     <div class="comments center">   
       <h6>＜コメント一覧＞</h6>
