@@ -1,17 +1,19 @@
-<div class="container">
+<div class="card-container">
   <div class="row">
     <div class="col s12">
       <div class="card">
         <div class="card-image">
           <img src="<%= blog.image %>">
           <span class="card-title">
-            <a href="">
-                <span class="white-text">
-                <bold ><%= blog.name %></bold><br>投稿者 : <%= blog.user.nickname %> さん</span></a>
-            </span>
         </div>
         <div class="card-content">
-          <p><%= simple_format(blog.text) %></p>
+          <span class="book_title">
+          Title : <%= blog.name %></span>
+          <a href=""><sapn class="posted_by">
+          Posted by : <%= blog.user.nickname %> さん</span>
+          </a>
+          <div class="posted_by_content"><%= simple_format(blog.text) %>
+          </div>
         </div>
         <div class="card-action">
           <li><%= link_to '詳細', "/blogs/#{blog.id}", method: :get, class: "waves-effect waves-light #90caf9 blue lighten-3 btn" %>
