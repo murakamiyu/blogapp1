@@ -118,6 +118,17 @@
 /*コメント系*/
 
 
+.card-content-comment {
+    height: 250px;
+    overflow: hidden;
+    text-align: center
+}
+
+.card-content-comment p {
+    text-align: center;
+	font-size: 15px;
+	margin: 0;
+}
 
 .comments {
 	height: 100px;
@@ -128,7 +139,7 @@
 .card-title p{
 	margin: 10px auto 10px;
 	padding-bottom: 15px;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .card-content p {
@@ -150,6 +161,9 @@
 	color: #ffa500;
 }
 
+.fa-gray {
+	color: #f0f0f0;
+}
 /*完了メッセージcss*/
 .success p {
 	margin: 50px;

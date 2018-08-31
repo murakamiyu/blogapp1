@@ -1,9 +1,8 @@
 <div class="input center">
 	<p>
-      Post
-    </p>
-  <%= form_tag('/blogs', method: :post) do %>
-    
+ 
+
+  <%= form_for @blog do |f| %>
     <input placeholder="title" type="text" name="name">
     <input placeholder="Image Url" type="text" name="image">
     <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>

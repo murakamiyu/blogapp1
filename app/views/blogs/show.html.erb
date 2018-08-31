@@ -37,12 +37,13 @@
  <div class="row">
     <div class="col s12">
       <div class="card #e0f7fa cyan lighten-5">
-        <div class="card-content white-text center">
+        <div class="card-content-comment center">
           <span class="card-title blue-text">comments</span>
           <% if current_user %>
+
       <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
         <textarea class="blue-text" cols="30" name="text" placeholder="comments" rows="2"></textarea>
-        <p>Rating : <input placeholder="評価" value="1" max="10" min="1" type="number" name="rate" id="review_rate">
+        <p>Rating : <input placeholder="評価" value="1" max="5" min="0" type="number" name="rate" id="review_rate">
         </p>
         <br>
         <input class="waves-effect waves-light blue lighten-3 btn" type="submit" value="SENT">
@@ -50,7 +51,6 @@
     <% end %>  
   </div>
         
-<i class="fas fa-star fa-yellow"></i>
 
         <div class="card-title center">
 
@@ -58,11 +58,41 @@
         <% @comments.each do |comment| %>
           <p>
             <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：
-            <%= comment.text %> Rate : <% if comment.rate.round == 4 %>
+            <%= comment.text %>  Rate : <% if comment.rate.round == 5 %>
             <i class="fas fa-star fa-yellow"></i>
             <i class="fas fa-star fa-yellow"></i>
             <i class="fas fa-star fa-yellow"></i>
             <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <% elsif comment.rate.round == 4 %>
+              <i class="fas fa-star fa-yellow"></i>
+              <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif comment.rate.round == 3%>
+              <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif comment.rate.round == 2%>
+              <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif comment.rate.round == 1%><i class="fas fa-star fa-yellow"></i>
+              <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif comment.rate.round == 0%>
+              <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
             <% end %>
           </p>
         <% end %>

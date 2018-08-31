@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
     end
 
     def new
+      @blog = Blog.new
     end
 
     def create
@@ -34,6 +35,7 @@ class BlogsController < ApplicationController
     def show
 	    @blog = Blog.find(params[:id])
 	    @comments = @blog.comments.includes(:user)
+      
     end
 
     private
