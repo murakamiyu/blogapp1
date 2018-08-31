@@ -152,5 +152,10 @@
 	font-size: 30px;
 }
 
+/*新規登録*/
 
+.actions {
+	margin-top: none;
+	margin-bottom: 50px; 
+}
 
