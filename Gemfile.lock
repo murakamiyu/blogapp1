@@ -68,6 +68,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     fssm (0.2.10)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -191,6 +193,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   compass-rails (~> 2.0)
   devise
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
