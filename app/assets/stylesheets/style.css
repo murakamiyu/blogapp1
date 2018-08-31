@@ -146,6 +146,10 @@
 	border-bottom: none;
 }
 
+.fa-yellow {
+	color: #ffa500;
+}
+
 /*完了メッセージcss*/
 .success p {
 	margin: 50px;
@@ -158,4 +162,6 @@
 	margin-top: none;
 	margin-bottom: 50px; 
 }
+
+
 
