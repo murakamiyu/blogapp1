@@ -20,10 +20,6 @@
 	float: right;
 }
 
-.posted_by_content {
-	margin-top: 20px;
-}
-
 .contentsrow {
 	height: 100px;
 	width: 70%;
@@ -37,34 +33,17 @@
 	margin: 0 auto;
 }
 
-.input {
-	margin-top: 100px;
+.card-content{
+    height: 200px;
+    overflow: hidden;
 }
 
-.name {
-	font-size: 30px;
-	bottom: 0px;
+.posted_by_content {
+	margin-top: 20px;
+	text-overflow: ellipsis;  
+	overflow: hidden;
 }
 
-.text {
-	background-color: #f0f0f0;
-	height: 100px;
-	width: 70%;
-	margin: 0 auto;
-	margin-bottom: 20px;
-}
-
-
-
-
-
-
-
-.comments {
-	height: 100px;
-	width: 70%;
-	margin: 0 auto;
-}
 
 .card-image img{
     height: 300px;
@@ -84,6 +63,88 @@
 }
 
 
+.input {
+	margin-top: 100px;
+}
+
+.name {
+	font-size: 30px;
+	bottom: 0px;
+}
+
+.text {
+	background-color: #f0f0f0;
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+/*詳細*/
+
+.card-content-show{
+	padding: 24px;
+}
+
+.posted_by_content-show {
+	margin-top: 20px;
+	width: 431px;
+}
+
+.container .input {
+	margin-top: 50px;
+}
+
+
+/*新規、編集系*/
+
+.input {
+	height: 100px;
+	margin: 0 auto;
+	width: 400px;	
+}
+
+.input .btn {
+	margin-top: 50px;
+}
+
+.input p {
+	margin: 50px;
+	font-size: 30px;
+}
+
+
+
+/*コメント系*/
+
+
+
+.comments {
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.card-title p{
+	margin: 10px auto 10px;
+	padding-bottom: 15px;
+	font-size: 20px;
+}
+
+.card-content p {
+	color: black;
+	text-align: center;
+	font-size: 15px;
+}
+
+#review_rate {
+	width: 50px;
+	color: black;
+	font-size: 20px;
+	text-align: center;	
+	margin-bottom: 0px;
+	border-bottom: none;
+}
 
 /*完了メッセージcss*/
 .success p {

@@ -6,13 +6,13 @@
           <img src="<%= @blog.image %>">
           <span class="card-title">
         </div>
-        <div class="card-content">
+        <div class="card-content-show">
           <span class="book_title">
           Title : <%= @blog.name %></span>
           <a href=""><sapn class="posted_by">
           Posted by : <%= @blog.user.nickname %> さん</span>
           </a>
-          <div class="posted_by_content"><%= simple_format(@blog.text) %>
+          <div class="posted_by_content-show"><%= simple_format(@blog.text) %>
           </div>
         </div>
         <div class="card-action">
@@ -33,25 +33,31 @@
 </div>
 
 
-<div class="container"> 
+<div class="card-container"> 
  <div class="row">
     <div class="col s12">
       <div class="card #e0f7fa cyan lighten-5">
-        <div class="card-content white-text">
+        <div class="card-content white-text center">
           <span class="card-title blue-text">comments</span>
           <% if current_user %>
       <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
-        <textarea class="blue-text" cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
-        <input class="waves-effect waves-light blue lighten-3 btn center" type="submit" value="SENT">
+        <textarea class="blue-text" cols="30" name="text" placeholder="comments" rows="2"></textarea>
+        <p>Rating : <input placeholder="評価" value="1" max="10" min="1" type="number" name="comment[rate]" id="review_rate">
+        </p>
+        <br>
+        <input class="waves-effect waves-light blue lighten-3 btn" type="submit" value="SENT">
       <% end %>
-    <% end %>
-          
-        </div>
-        <div class="card-title">
+    <% end %>  
+  </div>
+        
+
+
+        <div class="card-title center">
+
           <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：
             <%= comment.text %>
           </p>
         <% end %>
@@ -63,28 +69,3 @@
 </div>
 
 
-
-
-      <div class="container"> 
-   
-     <% if current_user %>
-      <%= form_tag("/blogs/#{@blog.id}/comments", method: :post) do %>
-        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
-        <input class="waves-effect waves-light blue lighten-3 btn center" type="submit" value="SENT">
-      <% end %>
-    <% end %>
-
-    <div class="comments center">   
-      <h6>＜コメント一覧＞</h6>
-      <% if @comments %>
-        <% @comments.each do |comment| %>
-          <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-            <%= comment.text %>
-          </p>
-        <% end %>
-      <% end %>
-    </div>
-
-  </div>
-</div> 

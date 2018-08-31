@@ -1,11 +1,12 @@
-<div class="contentsrow center">
+<div class="input center">
+	<p>
+      Post
+    </p>
   <%= form_tag('/blogs', method: :post) do %>
-    <h5>
-      投稿する
-    </h5>
+    
     <input placeholder="title" type="text" name="name">
     <input placeholder="Image Url" type="text" name="image">
     <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
-    <input type="submit" value="SENT">
+    <input class="waves-effect waves-light #90caf9 blue lighten-3 btn" type="submit" value="SENT">
   <% end %>
 </div>
