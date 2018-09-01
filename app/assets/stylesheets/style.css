@@ -148,6 +148,13 @@
 	font-size: 15px;
 }
 
+.card-content-show .rate {
+	margin-top: 10px;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+}
+
 #review_rate {
 	width: 50px;
 	color: black;

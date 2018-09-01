@@ -12,6 +12,45 @@
           <a href=""><sapn class="posted_by">
           Posted by : <%= @blog.user.nickname %> さん</span>
           </a>
+          <div class="rate">
+            Rate : <% if @blog.comments.average(:rate) <= 5 && @blog.comments.average(:rate) > 4 %>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <% elsif @blog.comments.average(:rate) <= 4 && @blog.comments.average(:rate) > 3 %>
+              <i class="fas fa-star fa-yellow"></i>
+              <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif @blog.comments.average(:rate) <= 3 && @blog.comments.average(:rate) > 2%>
+              <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif @blog.comments.average(:rate) <= 2 && @blog.comments.average(:rate) > 1%>
+              <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-yellow"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif @blog.comments.average(:rate) <= 1 && @blog.comments.average(:rate) > 0%>
+              <i class="fas fa-star fa-yellow"></i>
+              <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+              <% elsif @blog.comments.average(:rate) == 0%>
+              <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <i class="fas fa-star fa-gray"></i>
+            <% end %>
+          </div>
           <div class="posted_by_content-show"><%= simple_format(@blog.text) %>
           </div>
         </div>
