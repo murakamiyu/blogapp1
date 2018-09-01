@@ -1,5 +1,5 @@
-<div class="contentsrow">
-<h4>Log in</h4>
+<div class="input center">
+<p>Log in</p>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -12,15 +12,15 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
+ <!--  <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.label :remember_me %><br />
       <%= f.check_box :remember_me %>
       
-    </div>
+    </div> -->
   <% end -%>
 
-  <div class="actions">
+  <div class="waves-effect waves-light #90caf9 blue lighten-3 btn actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
