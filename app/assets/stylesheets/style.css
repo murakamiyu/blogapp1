@@ -80,6 +80,10 @@
 	margin-bottom: 20px;
 }
 
+.pagination {
+	background-color: #29b6f6;
+}
+
 /*詳細*/
 
 .card-content-show{
@@ -184,5 +188,14 @@
 	margin-bottom: 50px; 
 }
 
+/*検索*/
 
+.searchLists {
+	padding-top: 100px;
+}
 
+.searchLists .li {
+	display: inline-block;
+	float: left;
+	width: 300px;
+}

@@ -26,7 +26,7 @@ $(function(){
 		.done(function(data){
 			var html = buildHTML(data);
 			console.log(html, data)
-			$('.card-title.center').animate({scrollTop: $('.card-title.center')[0].scrollHeight}, 'fast');
+			$('.card-title.center').animate({scrollTop: $('.card-title.center.below')[0].scrollHeight}, 'fast');
 			$('.card-title.center').append(html);
 			$('.blue-text').val('');
 		})

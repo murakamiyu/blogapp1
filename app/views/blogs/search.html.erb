@@ -1,0 +1,22 @@
+<div class="input center">
+  <p>
+    Search
+  </p>
+  <%= form_tag('/blogs/search', method: :get) do %>
+    <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""></input>
+  <% end %>
+</div>
+
+<ul class="searchLists center">
+  <% @blogs.each do |blog| %>
+     <li>
+       <div class="card-image">
+          <img src="<%= blog.image %>">
+          <span class="card-title">
+        </div>
+        <a class="book_title" href="/blogs/<%= blog.id %>" title="<%= blog.name %>">
+          Title : <%= blog.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>

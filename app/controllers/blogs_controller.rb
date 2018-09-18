@@ -35,7 +35,14 @@ class BlogsController < ApplicationController
     def show
 	    @blog = Blog.find(params[:id])
 	    @comments = @blog.comments.includes(:user)
-      
+    end
+
+    def search
+      @blogs = Blog.where('name like(?)', "%#{params[:keyword]}%").limit(5)
+      respond_to do |format|
+        format.html
+        format.json
+      end
     end
 
     private
