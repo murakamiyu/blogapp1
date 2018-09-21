@@ -1,0 +1,325 @@
+/*reset*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*application.html*/
+/*header*/
+
+.first-header {
+  background-color: black;
+  overflow-x: auto;
+  text-align: center;
+  img {
+  	height: auto;
+  	margin: auto;
+    width: 1600px;
+  }
+}
+
+
+
+.page-header {
+	background-color: #f0f0f0;
+	width: auto;
+}
+
+.page-header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.primary-nav {
+	background-color: #f0f0f0;
+	height: 90px;
+	line-height: 90px;
+    .bar-title {
+      font-size: 30px;
+      margin-left: 10px;
+    }
+	li {
+	  list-style: none;
+	  float: right;
+	}
+	a {
+	  display: block;
+	  padding: 0 1.36em;
+	}
+	a:hover {
+	  background-color: #fafafa;
+	}
+}
+
+.second-header {
+  height: 1000px;
+}
+
+.third-header {
+  overflow-x: auto;
+  background-color: black;
+  text-align: center;
+  img {
+  	height: 900px;
+  	margin: auto;
+    width: auto;
+  }
+  span {
+    float: left;
+  }
+}
+
+.forth-header {
+  background-color: black;
+  height: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.size-position {
+    float: left;
+    height: 500px;
+    top: 150px;
+    width: 500px;
+    // margin: 0 0 20px 20px;
+}
+
+.information-section {
+  background-color: gray;
+  float: left;
+  height: 500px;
+  top: 150px;
+  width: 500px;
+  .inquire-form {
+    top: 150px;
+  }
+}
+
+
+/*インデックス系css*/
+
+.container {
+	width: 500px;
+}
+
+.card-section {
+	margin: 0 auto;
+	width: 900px;
+}
+
+.card-container {
+	float: left;
+	margin: 75px 20px 0px 20px;
+	width: 300px;
+	.card {
+	  list-style: none;
+	  width: 300px;
+    }
+    .list {
+      margin-top: 10px;
+    }
+}
+
+.book_title {
+	color: black;
+	font-size: 25px;
+}
+
+.posted_by {
+	color: black;
+	font-size: 16px;
+}
+
+.contentsrow {
+	float: left;
+	height: 100px;
+	width: 70%;
+	
+}
+
+.content_post {
+	background-size: cover;
+	height: 500px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.card-content{
+    height: 400px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.posted_by_content {
+	margin-top: 20px;
+	text-overflow: ellipsis;  
+	overflow: hidden;
+}
+
+
+.card-image {
+    height: 300px;
+    width: 300px;
+    img{
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    }
+}
+
+.card-action {
+	list-style: none;
+    li {
+	  text-align: center;
+	  list-style: none;
+	  float: left;
+	  width: 33%;
+	}
+}
+
+
+.input {
+	margin-top: 100px;
+}
+
+.name {
+	font-size: 30px;
+	bottom: 0px;
+}
+
+.text {
+	background-color: #f0f0f0;
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.pagination {
+	background-color: #29b6f6;
+}
+
+/*詳細*/
+
+.card-content-show {
+	padding: 24px;
+}
+
+.posted_by_content-show {
+	margin-top: 20px;
+	width: 431px;
+}
+
+.container .input {
+	margin-top: 50px;
+}
+
+
+/*新規、編集系*/
+
+.input {
+	height: 100px;
+	margin: 0 auto;
+	width: 400px;	
+}
+
+.input .btn {
+	margin-top: 50px;
+}
+
+.input p {
+	margin: 50px;
+	font-size: 30px;
+}
+
+
+
+/*コメント系*/
+
+
+.card-content-comment {
+    height: 250px;
+    overflow: hidden;
+    text-align: center
+}
+
+.card-content-comment p {
+    text-align: center;
+	font-size: 15px;
+	margin: 0;
+}
+
+.comments {
+	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.card-title p{
+	margin: 10px auto 10px;
+	padding-bottom: 15px;
+	font-size: 18px;
+}
+
+.card-content p {
+	color: black;
+	text-align: center;
+	font-size: 15px;
+}
+
+.card-content-show .rate {
+	margin-top: 10px;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+}
+
+#review_rate {
+	width: 50px;
+	color: black;
+	font-size: 20px;
+	text-align: center;	
+	margin-bottom: 0px;
+	border-bottom: none;
+}
+
+.fa-yellow {
+	color: #ffa500;
+}
+
+.fa-gray {
+	color: #f0f0f0;
+}
+/*完了メッセージcss*/
+.success p {
+	margin: 50px;
+	font-size: 30px;
+}
+
+/*新規登録*/
+
+.actions {
+	margin-top: none;
+	margin-bottom: 50px; 
+}
+
+/*検索*/
+
+.searchLists {
+	padding-top: 100px;
+}
+
+.searchLists .li {
+	display: inline-block;
+	float: left;
+	width: 300px;
+}
