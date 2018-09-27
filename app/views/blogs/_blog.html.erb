@@ -1,37 +1,29 @@
 <div class="card-container">
-  <div class="row">
-    <div class="col s12">
-      <div class="card">
+      <li class="card">
         <div class="card-image">
           <img src="<%= blog.image %>">
-          <span class="card-title">
         </div>
         <div class="card-content">
-          <span class="book_title">
-          Title : <%= blog.name %></span>
-          <a href=""><sapn class="posted_by">
-          Posted by : <%= blog.user.nickname %> さん</span>
+          <h1 class="book_title">
+          Title : <%= blog.name %></h1>
+          <a href=""><h2 class="posted_by">
+          Posted by : <%= blog.user.nickname %> さん</h2>
           </a>
-          <p></p><br>
-          <p>
+          <h3>
             Rate : <%= blog.comments.average(:rate) %>
-          </p>
+          </h3>
           <div class="posted_by_content"><%= simple_format(blog.text) %>
           </div>
         </div>
         <div class="card-action">
-          <li><%= link_to '詳細', "/blogs/#{blog.id}", method: :get, class: "waves-effect waves-light #90caf9 blue lighten-3 btn" %>
+          <li class="card-action list"><%= link_to 'Detail', "/blogs/#{blog.id}", method: :get, class: "btn" %>
+          </li>
+          <% if user_signed_in? && current_user.id == blog.user_id %>
+            <li class="card-action list"><%= link_to 'Edit', "/blogs/#{blog.id}/edit", method: :get ,class: "btn" %>
             </li>
-
-        <% if user_signed_in? && current_user.id == blog.user_id %>
-            <li><%= link_to '編集', "/blogs/#{blog.id}/edit", method: :get ,class: "waves-effect waves-light blue lighten-3 btn" %>
+            <li class="card-action list"><%= link_to 'Delete', "/blogs/#{blog.id}", method: :delete,  class: "btn" %>
             </li>
-            <li><%= link_to '削除', "/blogs/#{blog.id}", method: :delete,  class: "waves-effect waves-light blue lighten-3 btn" %>
-            </li>
-
-        <% end %>
+          <% end %>
         </div>
-      </div>
+      </li>
     </div>
-  </div>
-</div>

@@ -1,7 +1,64 @@
- <div class="contents row" >
+<header class="first-header">
+  <img src="https://www.freecomputerwallpapers.net/wallpapers/new_york_city_wallpaper-1920x1080.jpg">
+</header>
+
+<header class="second-header">
+   <nav class="primary-nav" role="navigation"><span class="bar-title">NEW_BOOKS</span></nav>
+  <div class="card-section">
   <% @blogs.each do |blog| %>
     <%= render partial: "blog", locals: { blog: blog } %>
   <% end %>
-  <%= paginate(@blogs) %>
 </div>
+</header>
+
+<header class="third-header">
+  <nav class="primary-nav" role="navigation"><span class="bar-title">TOPIC</span></nav>
+  <div class="articles"></div>
+  <img src="http://3.bp.blogspot.com/-7eOherc29NI/UOilvrFC_iI/AAAAAAAABdE/bELqE4dIhh8/s1600/DSC00040.JPG">
+</header>
+
+<header class="forth-header">
+<nav class="primary-nav" role="navigation"> <span class="bar-title">TOPIC</span></nav>
+  <div class="forth-content">
+  <div id="map" class="size-position"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: 35.659964,
+            lng: 139.695967
+          },
+          zoom: 17
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRh212c7abel6iStULD5_KGFuX9HPV8Ac&callback=initMap"
+    async defer></script> 
+  <div class="information-section">
+    <div class="inquire-form">
+      <h2>Contact</h2>
+        <div class="contact-form">
+          <form action="./">
+            <div class="form-item">
+              <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-item">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email">
+            </div>
+            <div class="form-item">
+              <label for="message">Message</label>
+              <textarea name="message" id="message"></textarea>
+            </div>
+            <div class="form-item">
+              <input type="submit" name="submit" id="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+ </header>
+
  
